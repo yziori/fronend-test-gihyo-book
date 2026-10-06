@@ -4,7 +4,8 @@
     "target": "es2023",
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
-    "types": ["vite/client", "node"],
+    /* この設定によりTSがvitestのdescribeなど globalに設定したものを型を認識してくれる。 */
+    "types": ["vite/client", "node", "vitest/globals"],
     "skipLibCheck": true,
 
     /* Bundler mode */
