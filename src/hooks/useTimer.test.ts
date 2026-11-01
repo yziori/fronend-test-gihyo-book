@@ -1,6 +1,9 @@
 import { renderHook, act } from '@testing-library/react';
 import { useTimer } from './useTimer';
 
+// ロジックテストでは外部依存から切り離してテストを実行する。
+// そうしないとテストがflakyになったり、実行時間が長くなったりする
+// そのため、外部依存をモックに差し替えて純粋な振る舞いのみをテストすることを推奨される
 describe('useTimer', () => {
   beforeEach(() => {
     vi.useFakeTimers();
